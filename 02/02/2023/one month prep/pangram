@@ -1,0 +1,13 @@
+ public static String pangrams(String s) {
+        s=s.replaceAll("","").toLowerCase();
+        String str = "";
+        for(char i='a';i<='z';i++){
+            if(s.indexOf(i)!=-1){
+                str=str+1;
+            }
+        }
+        if(str.length()==26){
+            return "pangram";
+        }
+        return "not pangram";
+    }
