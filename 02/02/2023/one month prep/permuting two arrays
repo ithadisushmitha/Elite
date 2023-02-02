@@ -1,0 +1,17 @@
+public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
+        Collections.sort(A);
+        Collections.sort(B,Collections.reverseOrder());
+        int n = A.size();
+        ArrayList<Integer> sumAL = new ArrayList<>();
+
+        for(int i=0;i<n;i++){
+            sumAL.add(A.get(i)+B.get(i));
+        }
+        
+        for(int element: sumAL){
+            if(element<k){
+                return "NO";
+            }
+        }
+        return "YES";
+    }        
