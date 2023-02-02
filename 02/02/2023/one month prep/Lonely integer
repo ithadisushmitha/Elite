@@ -1,0 +1,17 @@
+public static int lonelyinteger(List<Integer> arr) {
+        HashMap<Integer,Integer> set = new HashMap<Integer,Integer>();
+        for(int i=0;i<arr.size();i++){
+            if(!set.containsKey(arr.get(i))){
+                set.put(arr.get(i),1);
+            }
+            else{
+                set.put(arr.get(i),set.get(arr.get(i))+1);
+            }
+        }
+        for(Map.Entry<Integer,Integer> num:set.entrySet()){
+            if(num.getValue()==1){
+                return num.getKey();
+            }
+        }
+        return -1;
+    }
