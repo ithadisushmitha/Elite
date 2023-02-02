@@ -1,0 +1,15 @@
+public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+        Map<String, Integer> frequencyMap = new HashMap<>();
+        for(String s: strings){
+            if(frequencyMap.containsKey(s)){
+                frequencyMap.put(s, frequencyMap.get(s)+1);
+            }else frequencyMap.put(s,1);
+        }
+        List<Integer> ret = new ArrayList<>();
+        for(String q: queries){
+            if(!frequencyMap.containsKey(q)){
+                ret.add(0);
+            }else ret.add(frequencyMap.get(q));
+        }
+        return ret;
+    }  
