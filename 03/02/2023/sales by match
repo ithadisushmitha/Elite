@@ -1,0 +1,16 @@
+public static int sockMerchant(int n, List<Integer> ar) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int pairs = 0;
+        for(int x : ar){
+            if(! map.containsKey(x)){
+                map.put(x, 1);
+            }
+            else{
+                map.put(x, map.get(x) + 1);
+            }
+        }
+        for(int x : map.values()){
+            pairs += x/2;
+        }
+        return pairs;
+    }
