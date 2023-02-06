@@ -1,0 +1,22 @@
+public static List<Integer> gradingStudents(List<Integer> grades) {
+        List <Integer> arr=new ArrayList<Integer>();
+        int i,count,n;
+        count=0;
+        n=grades.size();
+        for(i=0;i<n;i++){
+            count=grades.get(i);
+            if(count>=38){
+                if(count%5>=3){
+                    arr.add(count+5-count%5); 
+                }
+                else{
+                    arr.add(count);
+                }
+            }
+            else{
+                arr.add(count);
+            }
+        }
+            return arr;
+    }
+}
