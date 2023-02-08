@@ -1,0 +1,12 @@
+public static int pageCount(int n, int p) {
+        int k;
+        int m=p/2;
+        if(n%2==0){
+           k=(n-p+1)/2;
+        }
+        else{
+           k=(n-p)/2;
+        }
+        int res = Math.min(k,m);
+        return res;
+    }
