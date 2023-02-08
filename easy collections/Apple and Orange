@@ -1,0 +1,16 @@
+public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+        int Acount = 0;
+        int Bcount = 0;
+        for (int i=0;i<apples.size();i++){
+            int k = a+apples.get(i);
+            if(k >=s && k<=t)
+                Acount+=1;
+        }
+        System.out.println(Acount);
+        for (int i=0;i<oranges.size();i++){
+            int p = b+oranges.get(i);
+            if(p>=s && p<=t)
+                Bcount+=1;
+        }
+        System.out.println(Bcount);
+    }
