@@ -1,0 +1,16 @@
+    List<List<String>> sortedArray = new ArrayList<>();
+        for (String string : grid) {
+            List<String> splitString = Arrays.asList(string.split(""));                    Collections.sort(splitString );
+            sortedArray.add(splitString);
+        }
+        for(int col = 0; col < sortedArray.get(0).size(); col++){
+            for(int row = 0; row < sortedArray.size() - 1; row ++){
+                if( sortedArray.get(row).get(col).charAt(0) > sortedArray.get(row + 1).get(col).charAt(0)){
+                return "NO";   
+            }
+        }
+    }
+    return "YES";
+    }
+
+}
