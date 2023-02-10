@@ -1,0 +1,28 @@
+public static String balancedSums(List<Integer> arr) {
+        int size = arr.size();
+        
+        int[] leftSide = new int[size];
+        
+        int[] rightSide = new int[size];
+        
+        leftSide[0] = 0;
+        
+        rightSide[size - 1] = 0;
+        
+        for(int i = 1; i < size; i++){
+            leftSide[i] = arr.get(i - 1) + leftSide[i - 1];
+        }
+        
+        for(int i = size - 2; i >= 0; i--){
+            rightSide[i] = arr.get(i + 1) + rightSide[i + 1];
+        }
+        
+        for(int i = 0; i < arr.size(); i++){
+           if(leftSide[i] == rightSide[i]){
+               return "YES";
+           }
+        }
+        
+        return "NO";
+    }
+}
